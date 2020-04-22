@@ -61,8 +61,7 @@ const Header = () => {
       <header className={headerStyles.header}>
         <div>
           <Link className={headerStyles.title} to="/">
-            {/* {data.site.siteMetadata.title} */}
-            <img src="./img/TR.jpg" />
+            <img src="temple-rock.jpg" alt="eagle" />
           </Link>
         </div>
         <h3>North Ward Community Church</h3>
