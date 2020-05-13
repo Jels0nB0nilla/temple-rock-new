@@ -1,14 +1,31 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 
 import headerStyles from "./header.module.scss"
 
 const Header = () => {
-  const data = useStaticQuery(graphql`
+ /*  const data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
           title
+        }
+      }
+    }
+  `) */
+
+  const data = useStaticQuery(graphql`
+    query Images {
+      image: file(relativePath: { eq: "temple-rock.jpg" }) {
+        id
+        childImageSharp {
+          fixed {
+            ...GatsbyImageSharpFixed
+          }
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
         }
       }
     }
@@ -61,7 +78,9 @@ const Header = () => {
       <header className={headerStyles.header}>
         <div>
           <Link className={headerStyles.title} to="/">
-            <img src="temple-rock.jpg" alt="eagle" />
+            <Img fixed={data.image.childImageSharp.fixed} alt="logo" />
+
+            {/* <Img fluid={data.image.childImageSharp.fluid} alt="logo" /> */}
           </Link>
         </div>
         <h3>North Ward Community Church</h3>
