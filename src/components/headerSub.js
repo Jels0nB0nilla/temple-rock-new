@@ -1,14 +1,21 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 
 import headerSubStyles from "./headerSub.module.scss"
 
 const HeaderSub = () => {
   const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
+    query subImages {
+      image: file(relativePath: { eq: "temple-rock.jpg" }) {
+        id
+        childImageSharp {
+          fixed {
+            ...GatsbyImageSharpFixed
+          }
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
         }
       }
     }
@@ -61,10 +68,9 @@ const HeaderSub = () => {
       <header className={headerSubStyles.headerSub}>
         <h1>
           <Link className={headerSubStyles.title} to="/">
-            {data.site.siteMetadata.title}
+            <Img fixed={data.image.childImageSharp.fixed} alt="logo" />
           </Link>
         </h1>
-        
       </header>
     </div>
   )

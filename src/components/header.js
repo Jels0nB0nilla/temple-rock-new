@@ -5,16 +5,6 @@ import Img from "gatsby-image"
 import headerStyles from "./header.module.scss"
 
 const Header = () => {
- /*  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `) */
-
   const data = useStaticQuery(graphql`
     query Images {
       image: file(relativePath: { eq: "temple-rock.jpg" }) {
