@@ -22,7 +22,7 @@
     "gatsby-plugin-styled-components": "^3.2.3",
     "gatsby-source-filesystem": "^2.2.4",
     "gatsby-transformer-sharp": "^2.4.6",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hot-loader": "^4.12.20",
